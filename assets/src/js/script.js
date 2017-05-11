@@ -1,31 +1,30 @@
-/*	Author:
-		TMW - (Author Name Here)
-*/
+/**
+ * Project Name: Kickoff
+ * @description The Kickoff boilerplate js file
+ * @author The Kickoff team
+ *
+ * Need help using JSDoc? Find out more at http://usejsdoc.org/
+ */
 
-// --------------------------------------------- //
-// DEFINE GLOBAL LIBS                            //
-// --------------------------------------------- //
-// Uncomment the line below to expose jQuery as a global object to the usual places
-// window.jQuery = window.$ = require('./libs/jquery/jquery-1.10.2.js');
+'use-strict';
 
-// force compilation of global libs that don't return a value.
-require("./helpers/log");
-require("./helpers/shims");
+// their code e.g. npm modules
+import ready from 'lite-ready'; // https://github.com/nicbell/liteready
+import $$ from 'double-dollar'; // https://github.com/mrmartineau/double-dollar
+import svg4everybody from 'svg4everybody'; // https://github.com/jonathantneal/svg4everybody
 
-//initialise KO object
-var KO = {};
+// Global libs that don't return a value
+import 'console';
+import 'kickoff-welcome.js'; // The Kickoff message in the js console. Remove it if you like :)
 
-KO.Config = {
-	variableX : '', // please don't keep me - only for example syntax!
+// our code
+// this is a test, uncomment the line below to try it
+// import moduleTest from './modules/module-test';
 
-	init : function () {
-		console.debug('Kickoff is running');
+window.$$ = $$; // add double-dollar to global scope
 
-		// Example module include
-		KO.UI = require('./modules/UI');
-		KO.UI.init();
-	}
-};
-
-
-KO.Config.init();
+// DOM ready code goes in here
+ready(() => {
+	// moduleTest(); // this is a test, uncomment this line to try it
+	svg4everybody();
+});
